@@ -16,4 +16,11 @@
 
 ...
 
+Metas:
+
+- ~~criar banco docker mysql~~
+- criar conexão jpa com hibernate
+- configurar liquibase
+- adicionar scripts via liquibase
+
 
