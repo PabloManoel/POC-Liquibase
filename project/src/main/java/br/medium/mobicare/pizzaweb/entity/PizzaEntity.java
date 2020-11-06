@@ -1,9 +1,16 @@
 package br.medium.mobicare.pizzaweb.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class PizzaEntity{
 
+	@Id
+	@GeneratedValue
 	private Integer id;
+	
 	private String nome;
 	private double preco;
 	private String descricao;

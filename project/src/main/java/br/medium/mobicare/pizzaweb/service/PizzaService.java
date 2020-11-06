@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 import br.medium.mobicare.pizzaweb.dto.PizzaDTO;
 import br.medium.mobicare.pizzaweb.entity.PizzaEntity;
-import br.medium.mobicare.pizzaweb.repository.PizzaRepository;
+import br.medium.mobicare.pizzaweb.repository.PizzaRepository_old;
 
 @Service
 public class PizzaService {
 	
 	@Autowired
-	PizzaRepository pizzaRepository;
+	PizzaRepository_old pizzaRepository;
 
 	public PizzaDTO get(Integer id) {		
 		PizzaEntity pizzaEntity = pizzaRepository.get(id);
