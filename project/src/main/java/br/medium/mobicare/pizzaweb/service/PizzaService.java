@@ -8,23 +8,16 @@ import org.springframework.stereotype.Service;
 
 import br.medium.mobicare.pizzaweb.dto.PizzaDTO;
 import br.medium.mobicare.pizzaweb.entity.PizzaEntity;
-import br.medium.mobicare.pizzaweb.repository.PizzaRepository_old;
+import br.medium.mobicare.pizzaweb.repository.PizzaRepository;
 
 @Service
 public class PizzaService {
 	
 	@Autowired
-	PizzaRepository_old pizzaRepository;
-
-	public PizzaDTO get(Integer id) {		
-		PizzaEntity pizzaEntity = pizzaRepository.get(id);
-		PizzaDTO PizzaDTO = mapToModel(pizzaEntity);
-		
-		return PizzaDTO;		
-	}
+	PizzaRepository pizzaRepository;
 
 	public List<PizzaDTO> getAll() {
-		List<PizzaEntity> pizzasEntity = pizzaRepository.getAll();
+		List<PizzaEntity> pizzasEntity = pizzaRepository.findAll();
 		List<PizzaDTO> pizzas = pizzasEntity.stream().map(pizzaEntity -> mapToModel(pizzaEntity)).collect(Collectors.toList());
 		
 		return pizzas;

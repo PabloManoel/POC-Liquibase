@@ -3,8 +3,10 @@ package br.medium.mobicare.pizzaweb.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Pizza")
 public class PizzaEntity{
 
 	@Id

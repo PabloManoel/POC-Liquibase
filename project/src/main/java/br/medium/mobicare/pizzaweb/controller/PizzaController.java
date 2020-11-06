@@ -13,18 +13,12 @@ import br.medium.mobicare.pizzaweb.dto.PizzaDTO;
 import br.medium.mobicare.pizzaweb.service.PizzaService;
 
 @RestController("/pizzas")
-public class PIzzaController {
+public class PizzaController {
 	
 	@Autowired
 	PizzaService pizzaService;
 
-	@GetMapping("/{id}")
-	public ResponseEntity<PizzaDTO> getPizza(@PathVariable("id") int id) {
-		PizzaDTO pizza = pizzaService.get(id);
-		return new ResponseEntity<PizzaDTO>(pizza, HttpStatus.OK);
-		
-	}
-	
+
 	@GetMapping("/")
 	public ResponseEntity<List<PizzaDTO>> getPizzas() {
 		List<PizzaDTO> pizza = pizzaService.getAll();
